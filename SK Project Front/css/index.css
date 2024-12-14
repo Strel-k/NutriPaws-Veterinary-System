@@ -1,0 +1,343 @@
+/* Header styles */
+header {
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+.menu-item.active {
+    color: rgb(45, 167, 208);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+header h2 {
+    color: rgb(45, 167, 208);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5vw; 
+}
+
+header i {
+    color: black;
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-left: auto;
+    justify-content: space-between; 
+}
+
+.profileHeader h2 {
+    margin-right: auto;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+}
+.profileHeader h2:hover {
+    color: rgb(45, 167, 208); /* Change to the desired color */
+
+
+}
+.profileHeader img {
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.profileHeader i {
+    margin-right: 0;
+    color: black;
+    font-size: 30px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.profileHeader i:hover {
+    background-color: rgba(103, 97, 97, 0.3); 
+}
+.profileHeader i.active {
+    color: rgb(45, 167, 208); /* Change to the desired color */
+}
+.profileHeader button {
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5vw; 
+    margin: 4px 2px;
+    transition: background-color 0.3s ease;
+}
+
+body {
+    background-color: rgb(183, 181, 178);
+    font-family: "Open Sans", sans-serif;
+    margin:0 !important;
+    margin-left:0;
+    height: 100vh;
+}
+body.collapsed {
+    margin:0 !important;
+    margin-right:0 !important;
+}
+.sidebar-container {
+    padding-top: 30px;
+    background-color: rgb(53, 52, 52);
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight:600;
+    position:absolute;
+}
+
+.sidebar-hidden {
+    display:none;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease; 
+}
+.sidebar-container.collapsed {
+    width: 0; 
+}
+.toggle-btn {
+    background-color: transparent; 
+    border: none;
+    color: black;
+    font-size: 24px; 
+    cursor: pointer;
+    margin-left: 10px; 
+    position: relative; 
+    padding: 10px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    border-radius: 25px;
+}
+
+.toggle-btn:hover {
+    background-color: rgba(103, 97, 97, 0.3); 
+}
+
+.sidebar {
+    color: white;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    transition: opacity 0.3s ease;
+    margin:0;
+}
+
+.sidebar ul {
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    width:100%;
+}
+
+.sidebar ul i {
+    margin-right: 10px;
+}
+
+.logout {
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; 
+}
+
+footer {
+    background-color: black;
+    justify-content: center;
+    bottom: 0;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size:10px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+body, header, .sidebar-container, footer {
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+body.dark-mode {
+    background-color: #121212; 
+    color: white; 
+}
+
+header.dark-mode {
+    background-color: #1e1e1e; 
+}
+
+header.dark-mode h2, header.dark-mode i, header.dark-mode button {
+    color: white;
+}
+
+.sidebar-container.dark-mode {
+    background-color: #1e1e1e;
+}
+
+.sidebar-container.dark-mode .sidebar ul {
+    color: white; 
+}
+
+.sidebar-container.dark-mode .sidebar ul:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.logout.dark-mode {
+    color: white; 
+}
+
+footer.dark-mode {
+    background-color: #1e1e1e; 
+}
+
+.dark-mode-toggle {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: black;
+    border: none; 
+    color: white; 
+    font-size: 24px;
+    cursor: pointer; 
+    transition: color 0.3s ease;
+    z-index: 1000; 
+    border-radius: 45px;
+    padding: 12px;
+}
+
+.dark-mode-toggle:hover {
+    color: #fff700; 
+}
+
+.dark-mode-toggle.light-bg {
+    background-color: white;
+    color: #e9e571; 
+}
+.dark-mode-toggle.light-bg:hover {
+    color: black; 
+}
+.content-section {
+    width: 80%;
+    text-align: center; /* Center text within each section */
+}
+
+@media (max-width: 1200px) {
+    .sidebar-container {
+        width: 25%; 
+    }
+}
+
+@media (max-width: 992px) {
+    header h2 {
+        font-size: 2.2vw;
+    }
+
+    .profileHeader i {
+        font-size: 2vw; 
+    }
+
+    .sidebar-container {
+        width: 25%; 
+    }
+
+    .sidebar ul {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-container {
+        width: 30%; 
+    }
+
+    .sidebar ul {
+        flex-direction: column; 
+        padding: 0; 
+    }
+
+    .profileHeader {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .profileHeader img {
+        width: 40px; 
+        height: 30px;
+    }
+
+    header {
+        padding: 10px; 
+    }
+
+    .profileHeader button {
+        font-size: 1.5vw; 
+        padding: 8px 16px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar-container {
+        width: 100%;
+        padding: 5px; 
+        position: absolute; 
+        z-index: 1; 
+    }
+
+    .sidebar {
+        display: none; 
+    }
+
+    .sidebar.hidden {
+        display: flex; 
+    }
+
+    .sidebar ul {
+        text-align: center;
+        padding: 10px; 
+    }
+
+    .profileHeader h2 {
+        margin-right: 0; 
+        font-size: 18px; 
+    }
+
+    .profileHeader {
+        justify-content: center; 
+        padding: 10px; 
+    }
+
+    .profileHeader img {
+        width: 30px; 
+        height: 30px;
+    }
+
+    header h2 {
+        font-size: 18px; 
+    }
+
+    footer {
+        padding: 8px;
+    }
+}

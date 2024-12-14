@@ -1,0 +1,21 @@
+.search-bar {
+    width: 0;
+    height: 40px;
+    padding: 0;
+    opacity: 0;
+    border-radius: 25px;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+/* Expanded state when visible */
+.search-bar.expanded {
+    width: 600px; /* Change to desired width */
+    padding: 0 10px;
+    opacity: 1;
+}
+
+.dark-mode .search-bar.expanded {
+    background-color: rgb(53, 52, 52);
+
+}

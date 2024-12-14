@@ -1,0 +1,98 @@
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px;
+}
+
+.member {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px;
+    text-align: center; /* Center the text */
+    transition: transform 0.2s; /* Animation on hover */
+}
+
+.member:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.memberImage img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular profile images */
+    max-width: 80px; /* Limit max width for profile images */
+}
+
+.memberName h4 {
+    text-transform: uppercase; /* Space around the member name */
+     color: rgb(45, 167, 208);
+     margin-top:5px;
+    
+}
+
+.memberDescription p {
+    font-size: 0.9em; /* Slightly smaller font for description */
+    color: black; /* Darker text color for better contrast */
+}
+.dark-mode .member {
+    background-color: rgb(53, 52, 52);
+    top:0;
+}
+
+.dark-mode .memberDescription p {
+    color:white;
+}
+.memberContent p {
+    color:black;
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+   
+}
+
+.view-button {
+    background-color: rgb(45, 167, 208); /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    margin-right: 10px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    text-transform: uppercase;
+}
+.view-button.active {
+    background-color: rgb(25, 113, 142); /* Darker button color for active state */
+}
+.view-button:hover {
+    background-color: rgb(36, 147, 184); /* Darker button color for active state */
+
+}
+.member-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-item {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    border: 1px solid #ccc; /* Border around each member */
+    padding: 15px; /* Padding */
+    margin: 10px 0; /* Space between items */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.member-item img {
+    width: 50px; /* Image width */
+    height: 50px; /* Image height */
+    border-radius: 50%; /* Circular image */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.memberDetails {
+    flex-grow: 1; /* Take up remaining space */
+}

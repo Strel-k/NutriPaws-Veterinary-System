@@ -1,0 +1,132 @@
+.main-body {
+    margin-left: 18%; /* Adjusted margin to move the content slightly to the right */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 82%; /* Reduced width to maintain balance with the new margin */
+    height: 100vh;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.main-body.collapsed {
+    margin-left: 12%; /* Adjusted margin for collapsed state */
+    width: 97%; /* Increased width when sidebar is collapsed */
+}
+.dashboardTitle h2.collapsed, .dashboardTitle p.collapsed {
+    position:absolute;
+}
+.main-body h2 {
+    text-transform: uppercase;
+}
+
+.dashboardContent {
+    display:block;
+    justify-content: flex-start;
+}
+.dashboardTitle, .projectTitle, .memberTitle {
+    width: 100%; /* Takes full width of the main-body container */
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 0 20px; /* Adds padding around the title */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.dashboardTitle h2, .projectTitle h2, .memberTitle h2 {
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0; 
+    margin-top: -10px; /* Moves titles slightly upwards */
+}
+
+.dashboardContent div {
+    display: flex;
+    justify-content: flex-end; /* Align boxes to the right */
+    width: 100%;
+}
+
+.dashboardContent p {
+    margin-left:-45%;
+    position:relative;
+}
+
+.recentProjects, .ongoingTasks {
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 45%; /* Adjust the width for responsiveness */
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 20px; /* Adds space between the boxes */
+    flex-direction: column;;
+}
+
+
+
+.dark-mode .recentProjects, 
+.dark-mode .ongoingTasks,
+.dark-mode .announcements  {
+    background-color: #1e1e1e;
+    color: #ffffff; /* Adjust text color for better contrast */
+}
+
+.announcements {
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    height:auto;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    margin-left: 2%;
+    flex-direction: column;      /* Stack children vertically */
+    justify-content: flex-start; /* Align content to start */
+    padding-bottom:12%;
+}
+.announcements.collapsed {
+    padding-bottom:5%;
+}
+.announcementTitle {
+    display:flex;
+    align-items: center;
+    width: 100%; /* Ensure the title spans the entire width */
+}
+.recentProjects h3, .ongoingTasks h3 {
+    font-weight: 600;            /* Consistent font weight */
+    text-transform: uppercase;   /* Consistent text transformation */
+    display: block;              /* Ensures block-level formatting */
+    text-align: left;            /* Align text to the left */
+    margin: 0;                   /* Remove default margins */
+    padding-left: 10px;          /* Add consistent padding for spacing */
+}
+.announcementTitle h3 {
+    font-weight: 600;              /* Consistent font weight */
+    text-transform: uppercase;     /* Consistent text transformation */
+    text-align: left;              /* Align text to the left */
+    margin: 0;                     /* Remove default margins */
+    padding-left: 10px;            /* Add consistent padding for spacing */
+    display: block;                /* Ensures block-level formatting */
+    width: calc(100% - 20px); /* Adjust to account for padding */
+}
+@media screen and (max-width: 1024px) {
+    .recentProjects, .ongoingTasks {
+        width: 100%; /* Make boxes take full width on smaller screens */
+        margin-left: 0; /* Remove margin between boxes on smaller screens */
+        margin-bottom: 15px; /* Add margin for better spacing on smaller screens */
+    }
+    
+    .dashboardContent div {
+        flex-direction: column; /* Stack the boxes vertically on smaller screens */
+    }
+    .main-body {
+        margin-left: 10%; /* Smaller margin for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+    .main-body.collapsed {
+        margin-left: 2%; /* Smaller margin for collapsed state on smaller screens */
+        width: 98%; /* Full width when sidebar is collapsed on smaller screens */
+    }
+}

@@ -1,0 +1,87 @@
+/* General Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 300px; 
+    height: auto; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    opacity: 0; /* Start as invisible */
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+
+.modal.show {
+    display: block; /* Show modal */
+    opacity: 1; /* Fully visible */
+}
+
+.modal-content.show {
+    transform: scale(1); /* Scale to original size */
+}
+.modal-button {
+    background-color: rgb(45, 167, 208); /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom:5px;
+}
+.modal-button:hover{
+    background-color: rgb(35, 125, 155); /* Darker green on hover */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 25px;
+    border: 1px solid #888;
+    width: 100%; /* Full width of the modal */
+    max-width: 300px; /* Set a max-width for better responsiveness */
+    justify-content: center;
+    text-align: center;
+    transform: translateY(-20px); /* Start slightly above */
+    transition: transform 0.3s ease; 
+}
+.modal-content h2 {
+    text-transform: uppercase;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .modal-content {
+    background-color: #333; 
+    color: #fff; 
+    border: 1px solid #444; 
+}
+
+body.dark-mode .modal-button {
+    background-color: #161616; /* Darker green for buttons */
+    color: white;
+}
+
+body.dark-mode .modal-button:hover {
+    background-color: #707974; /* Lighter green on hover */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dark Mode Close Button Styles */
+body.dark-mode .close {
+    color: #fff; /* White close button in dark mode */
+}

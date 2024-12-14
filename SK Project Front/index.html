@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/Nutripaws Logo.jpg">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/mainBody.css">
+    <link rel="stylesheet" type="text/css" href="css/notification.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/projects.css">
+    <link rel="stylesheet" type="text/css" href="css/members.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+    <link rel="stylesheet" type="text/css" href="css/record-form.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/appointment-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="css/darkmode-appointment.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>NutriPaws</title>
+</head>
+<body>
+    <header class="dashboardHeader">
+        <div class="profileHeader">
+            <button id="toggleSidebar" class="toggle-btn">☰</button> 
+            <h2>NutriPaws</h2>
+             <i class='bx bx-bell'id="notificationBell"></i>
+            <div id="notificationBox" class="notification-box">
+                <h3>Notifications</h3><hr>
+                <ul>
+                    <li>You have a new message!</li><hr>
+                    <li>Your project has been updated.</li><hr>
+                    <li>Meeting scheduled for tomorrow at 10 AM.</li><hr>
+                </ul>
+            </div>
+            <img src="image/pfpskshit.jpg" alt="Profile">
+        </div>
+    </header>
+    
+    
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <ul data-section="dashboard" class="menu-item"><i class='bx bxs-home'></i><span>Dashboard</span></ul>
+            <ul data-section="projects" class="menu-item"><i class='bx bxs-spreadsheet'></i><span>Appointments</span></ul>
+            <ul data-section="members" class="menu-item"><i class='bx bxs-group'></i><span>Records</span></ul>
+            <div class="logout">
+                <ul id="logoutButton" data-section="logout"><i class='bx bx-exit'></i><span>Log out</span></ul>
+            </div>
+        </div>
+    </div>
+    
+    <button id="darkModeToggle" class="toggle-btn dark-mode-toggle"><i class='bx bxs-moon'></i></button>
+
+    <div class="main-body">
+        <div id="dashboard" class="content-section" style="display: none;">
+            <div class="dashboardTitle">
+                <h2>Welcome to <span style="color: rgb(45, 167, 208);">NutriPaws!</span></h2>
+            </div>
+            <div class="dashboardContent">
+                <br>
+                <div>
+                    <div class="recentProjects">
+                        <h3>Current Appointments</h3>
+                        <hr>
+                        <div style="padding-bottom:60%;">
+
+                        </div>
+                    </div>
+                    <div class="ongoingTasks">
+                        <h3>Finished Appointments</h3>
+                        <hr>
+                        <div style="padding-bottom:60%;">
+                            
+                        </div>
+                    </div>
+                </div>
+                
+           
+            </div>
+        </div>
+        <div id="projects" class="content-section" style="display: none;">
+           <div class="projectTitle">
+           </div>
+           <div class="projectContent">
+            <div class="appointment-calendar">
+                <div class="calendar-header">
+                    <h2 id="calendar-title"></h2>
+                </div>
+                <div class="calendar-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar-dates">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="appointment-sidebar">
+                <h2>Appointments for Today</h2>
+                <hr>
+                <ul id="appointment-list">
+                    <div class="appointment-body">
+                        <li class="appointment">
+                            <h4>12:00 PM - 1:00 PM</h4>
+                            <p>John Doe</p>
+                        </li>
+                        <li class="appointment">
+                            <h4>2:00 PM - 3:00 PM</h4>
+                            <p>Jane Smith</p>
+                        </li>
+                    </div>
+                </ul>
+                <button id="add-appointment-btn" class="add-appointment-btn">Add Appointment</button>
+
+            </div>
+        </div>
+         
+        </div>
+        <div id="members" class="content-section" style="display: none;">
+            <div class="memberTitle">
+                <h2>Records</h2>
+                <hr>
+            </div>
+            <div class="view-toggle">
+                <button id="gridViewBtn" class="view-button active"><i class='bx bxs-grid-alt'></i></button>
+                <button id="listViewBtn" class="view-button"><i class='bx bx-list-ul' style='color:#ffffff' ></i></button>
+                <button id="addRecordBtn" class="view-button"><i class='bx bx-user-plus'></i> Add Record</button>
+                <button id="search" class="view-button"><i class='bx bx-search' style='color:#ffffff' ></i></button>
+                <input type="text" id="searchBar" class="search-bar" placeholder="Search Records...">
+
+                <hr>
+            </div>
+            <div class="memberContent">
+                <div id="memberGrid" class="member-grid">
+                    <div class="member">
+                        <div class="memberImage">
+                            <img src="image/pfpskshit.jpg" alt="">
+                        </div>
+                        <div class="memberName">
+                            <h4>Mikoto Urabe</h4>
+                        </div>
+                        <div class="memberDescription">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="memberImage">
+                            <img src="image/Kawaii Nagato.jpg" alt="">
+                        </div>
+                        <div class="memberName">
+                            <h4>Yuki Nagato</h4>
+                        </div>
+                        <div class="memberDescription">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="memberImage">
+                            <img src="image/Badcat.jpg" alt="">
+                        </div>
+                        <div class="memberName">
+                            <h4>John Doe</h4>
+                        </div>
+                        <div class="memberDescription">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="memberImage">
+                            <img src="image/Badcat.jpg" alt="">
+                        </div>
+                        <div class="memberName">
+                            <h4>Jane Doe</h4>
+                        </div>
+                        <div class="memberDescription">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="memberList" class="member-list" style="display: none;">
+                    <div class="member-item">
+                        <div class="memberImage">
+                            <img src="image/pfpskshit.jpg" alt="">
+                        </div>
+                        <div class="memberDetails">
+                            <div class="memberName">
+                                <h4>Mikoto Urabe</h4>
+                            </div>
+                            <div class="memberDescription">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div class="memberImage">
+                            <img src="image/Kawaii Nagato.jpg" alt="">
+                        </div>
+                        <div class="memberDetails">
+                            <div class="memberName">
+                                <h4>Yuki Nagato</h4>
+                            </div>
+                            <div class="memberDescription">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div class="memberImage">
+                            <img src="image/Badcat.jpg" alt="">
+                        </div>
+                        <div class="memberDetails">
+                            <div class="memberName">
+                                <h4>John Doe</h4>
+                            </div>
+                            <div class="memberDescription">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div class="memberImage">
+                            <img src="image/Badcat.jpg" alt="">
+                        </div>
+                        <div class="memberDetails">
+                            <div class="memberName">
+                                <h4>Jane Doe</h4>
+                            </div>
+                            <div class="memberDescription">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        
+</div>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <div>
+                <span class="close">&times;</span>
+            </div>
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <button id="confirmLogout" class="modal-button">Confirm</button>
+            <button id="cancelLogout" class="modal-button">Cancel</button>
+        </div>
+    </div>
+    <div id="addRecordModal" class="modalAdding">
+        <div class="modal-content">
+            <h2>Add Record</h2>
+            <form class="record-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pet-name">Pet Name:</label>
+                        <input type="text" id="pet-name" name="pet-name" placeholder="Enter pet name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type">Pet Type:</label>
+                        <select id="petType" name="petType">
+                            <option value="">Select Pet Type</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                        </select>      
+                        <div id="breed-select" style="display: none; margin-top:15px;">
+                            <select id="breed" name="breed">
+                                <option value="">Select Breed</option>
+                            </select>
+                        </div>             
+                        <div id="unspecified-breed" style="display: none;">
+                            <input type="text" id="unspecified-breed-input" name="unspecified-breed">
+                            <label for="unspecified-breed-input">Please specify the breed:</label>
+                        </div>
+                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vet-treated">Does your pet have a record here?</label>
+                        <input type="checkbox" id="vet-treated" name="vet-treated">
+                    </div>
+                    <div class="form-group">
+                        <label for="vet-treatment-date" style="margin-top:10px;">Date of vet treatment:</label>
+                        <input type="date" id="vet-treatment-date" name="vet-treatment-date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vet-treatment-details">Details of vet treatment:</label>
+                        <textarea id="vet-treatment-details" name="vet-treatment-details" placeholder="Enter details of vet treatment"></textarea>
+                    </div>
+                </div>
+                <button type="submit">Add Record</button>
+
+            </form>
+
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>Powered by div.</p>
+    </footer>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/selector.js"></script>
+    <script src="js/memberView.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/form-modality.js"></script>
+    <script src="js/breed-type.js"></script>
+    <script src="js/calendar.js"></script>
+
+
+</body>
+</html>
