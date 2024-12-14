@@ -60,4 +60,7 @@ window.addEventListener('click', (event) => {
         logoutModal.classList.remove('show'); // Hide the modal on outside click
     }
 });
+document.getElementById('confirmLogout').addEventListener('click', function() {
+    window.location.href = 'login.html';
+});
 
